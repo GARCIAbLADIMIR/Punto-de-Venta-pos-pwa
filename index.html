@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>POS Móvil Offline</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Punto de venta</h1>
+      <span id="network-status" class="badge online">● En línea</span>
+    </div>
+    <div class="header-actions">
+      <button id="btn-notify-perm" class="btn-icon" title="Activar Alertas">🔔</button>
+      <button id="btn-install" class="btn-install hidden">Instalar App</button>
+    </div>
+  </header>
+
+  <main id="app-view" class="app-container"></main>
+
+  <div id="camera-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Capturar Imagen</h3>
+      <video id="camera-video" autoplay playsinline></video>
+      <canvas id="camera-canvas" class="hidden"></canvas>
+      <div class="modal-actions">
+        <button id="btn-capture" class="btn-primary">📸 Tomar Foto</button>
+        <button id="btn-close-camera" class="btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-view="caja">🛒 Caja</button>
+    <button class="nav-btn" data-view="inventario">📦 Inventario</button>
+    <button class="nav-btn" data-view="ventas">📊 Corte</button>
+  </nav>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
